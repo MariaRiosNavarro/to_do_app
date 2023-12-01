@@ -17,7 +17,7 @@ const Home = () => {
     <section className="max-w-[95vw] my-0 mx-auto h-screen">
       <Header />
       <AddToDo setRefresh={setRefresh} />
-      <ToDoList toDos={toDos} />
+      <ToDoList toDos={toDos} setRefresh={setRefresh} />
     </section>
   );
 };

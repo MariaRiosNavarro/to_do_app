@@ -1,6 +1,6 @@
 import ToDoItem from "./ToDoItem";
 
-const ToDoList = ({ toDos }) => {
+const ToDoList = ({ toDos, setRefresh }) => {
   if (toDos.length === 0) {
     return (
       <section className="flex justify-center items-center">
@@ -13,8 +13,8 @@ const ToDoList = ({ toDos }) => {
         <h2 className="text-center text-primary p-8 text-2xl font-bold rounded-xl mx-auto">
           Tasks
         </h2>
-        {toDos.map((todo, index) => (
-          <ToDoItem key={index} todo={todo} />
+        {toDos.map((todo) => (
+          <ToDoItem key={todo.id} todo={todo} setRefresh={setRefresh} />
         ))}
       </section>
     );

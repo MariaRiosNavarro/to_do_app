@@ -1,7 +1,20 @@
 import DeleteSvg from "./DeleteSvg";
 
-const ToDoItem = ({ todo }) => {
-  const handleRemove = () => {};
+const ToDoItem = ({ todo, setRefresh }) => {
+  const handleRemove = () => {
+    console.log("before");
+    fetch("http://localhost:9995/api/todos", {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ id: todo.id }),
+    }).then(() => {
+      console.log("after");
+      setRefresh((prev) => !prev);
+      console.log("ToDo Deleted");
+    });
+  };
 
   return (
     <article className="flex flex-col items-center">
