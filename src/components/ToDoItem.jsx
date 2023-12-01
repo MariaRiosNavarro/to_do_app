@@ -19,7 +19,9 @@ const ToDoItem = ({ todo, setRefresh }) => {
   return (
     <article className="flex flex-col items-center">
       <div className="flex flex-col  w-[70%]">
-        <p className="bg-red-300">{todo.todo}</p>
+        <p className="bg-secondary py-1 text-neutral pl-2 font-bold rounded-xl my-1">
+          {todo.todo}
+        </p>
         <div className="flex items-stretch pl-[1rem] gap-[5rem] relative">
           <div>
             <span className="block">Category: </span>
